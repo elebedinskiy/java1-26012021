@@ -15,5 +15,13 @@ public class Hello {
         char varChar2 = '\u2242'; // до '\uffff' или 65,535
         boolean varBoolean = false; // false, true
 
+        float a = 3, b = 5, c = 7, d = 9;
+        System.out.println("a = " + a + "; b = " + b + "; c = " + c + "; d = " + d);
+        System.out.println("a * (b + (c / d)) = " + calc(a, b, c, d));
+    }
+
+    // Написать метод вычисляющий выражение a * (b + (c / d)) и возвращающий результат,где a, b, c, d – входные параметры этого метода;
+    static float calc(float a, float b, float c, float d){
+        return a * (b + (c / d));
     }
 }
