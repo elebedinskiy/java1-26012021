@@ -34,15 +34,26 @@ public class Hello {
         }
         System.out.println(Arrays.toString(arr3));
 
-        /* 4.Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),
-        и с помощью цикла(-ов) заполнить его диагональные элементы единицами; */
-
         int arrSize = 5;
         int[][] arr4 = new int[arrSize][arrSize];
         for (int i = 0, j = 0; i < arr4.length; i++, j++){
             arr4[i][j] = 1;
         }
         printArray(arr4); // вызов метод вывода двумерного массива
+
+        // 5.Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
+        int[] arr5 = {10, 4, 3, 8, 2, 12, 4};
+        System.out.println(Arrays.toString(arr5));
+        int max = arr5[0], min = arr5[0];
+        for (int i = 1; i < arr5.length; i++){
+            if (max < arr5[i]) {
+                max = arr5[i];
+            }
+            if (min > arr5[i]) {
+                min = arr5[i];
+            }
+        }
+        System.out.println("Max: " + max + ", Min: " +  min);
 
     }
     static void printArray (int[][] array){
