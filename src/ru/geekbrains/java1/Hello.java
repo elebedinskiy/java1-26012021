@@ -1,5 +1,6 @@
 package ru.geekbrains.java1;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Hello {
@@ -32,5 +33,24 @@ public class Hello {
             }
         }
         System.out.println(Arrays.toString(arr3));
+
+        /* 4.Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),
+        и с помощью цикла(-ов) заполнить его диагональные элементы единицами; */
+
+        int arrSize = 5;
+        int[][] arr4 = new int[arrSize][arrSize];
+        for (int i = 0, j = 0; i < arr4.length; i++, j++){
+            arr4[i][j] = 1;
+        }
+        printArray(arr4); // вызов метод вывода двумерного массива
+
+    }
+    static void printArray (int[][] array){
+        for (int i = 0; i < array.length; i++){
+            for (int j = 0; j < array[i].length; j++){
+                System.out.print(array[i][j] + "  ");
+            }
+            System.out.println();
+        }
     }
 }
