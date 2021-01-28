@@ -23,5 +23,14 @@ public class Hello {
             arr2[i] = j;
         }
         System.out.println(Arrays.toString(arr2));
+
+        int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(Arrays.toString(arr3));
+        for(int i = 0; i< arr3.length; i++){
+            if (arr3[i] < 6){
+                arr3[i] *= 2;
+            }
+        }
+        System.out.println(Arrays.toString(arr3));
     }
 }
