@@ -55,6 +55,22 @@ public class Hello {
         }
         System.out.println("Max: " + max + ", Min: " +  min);
 
+        /*
+        * 6. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
+        * метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой
+        * части массива равны. Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true,
+        * checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы
+        * в массив не входят.
+        * */
+
+        int[] arr61 = {2, 2, 2, 1, 2, 2, 10, 1};
+        int[] arr62 = {2, 2, 2, 1, 2, 2, 10, 2};
+        int[] arr63 = {1, 1, 1, 3};
+        int[] arr64 = {1, 1, 1, 1, 1, 1, 1, 8};
+        System.out.println(checkBalance(arr61)); // true
+        System.out.println(checkBalance(arr62)); // false
+        System.out.println(checkBalance(arr63)); // true
+        System.out.println(checkBalance(arr64)); // false
     }
     static void printArray (int[][] array){
         for (int i = 0; i < array.length; i++){
@@ -63,5 +79,29 @@ public class Hello {
             }
             System.out.println();
         }
+    }
+
+    static boolean checkBalance(int[] array){
+        int sum1 = array[0];
+        int sum2 = 0;
+
+        // посчитали сумму элементов правой части массива кроме элемента 0
+        for (int i = 1; i < array.length; i++){
+            sum2 += array[i];
+        }
+
+        // сравниваем левую и правую часть
+        for (int i = 1; i < array.length; i++){
+            if (sum1 == sum2){
+                return true;
+            }
+            // если части не равны, то к левой сумме прибавить один элемент, а от правой отнять
+            else {
+                sum1 += array[i];
+                sum2 -= array[i];
+            }
+        }
+
+        return false;
     }
 }
