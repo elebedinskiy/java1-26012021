@@ -1,6 +1,5 @@
 package ru.geekbrains.java1;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Hello {
@@ -55,14 +54,6 @@ public class Hello {
         }
         System.out.println("Max: " + max + ", Min: " +  min);
 
-        /*
-        * 6. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
-        * метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой
-        * части массива равны. Примеры: checkBalance([2, 2, 2, 1, 2, 2, || 10, 1]) → true,
-        * checkBalance([1, 1, 1, || 2, 1]) → true, граница показана символами ||, эти символы
-        * в массив не входят.
-        * */
-
         int[] arr61 = {2, 2, 2, 1, 2, 2, 10, 1};
         int[] arr62 = {2, 2, 2, 1, 2, 2, 10, 2};
         int[] arr63 = {1, 1, 1, 3};
@@ -71,7 +62,51 @@ public class Hello {
         System.out.println(checkBalance(arr62)); // false
         System.out.println(checkBalance(arr63)); // true
         System.out.println(checkBalance(arr64)); // false
+
+        /**
+         * 7.Написать метод, которому на вход подается одномерный массив и число n
+         * (может быть положительным, или отрицательным), при этом метод должен сместить все
+         * элементы массива на n позиций. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
+         */
+        int[] arr71 = {1, 2, 3, 4, 5, 6, 7, 8};
+        int n1 = 11;
+        int[] arr72 = {1, 2, 3, 4, 5, 6, 7, 8};
+        int n2 = -1;
+        System.out.println(Arrays.toString(arr71));
+        moveArray(arr71, n1);
+        System.out.println(Arrays.toString(arr71));
+        System.out.println(Arrays.toString(arr72));
+        moveArray(arr72, n2);
+        System.out.println(Arrays.toString(arr72));
+
     }
+
+    static void moveArray(int[] array, int n) {
+        if (n > 0){
+            for (int i = 0; i < n; i++){
+                int buffer = array[array.length - 1]; // запомним последний элемент массива
+                for (int j = 1; j < array.length; j++){
+                    array[array.length - j] = array[array.length - 1 - j];
+                    if (j == array.length - 1){
+                        array[0] = buffer;
+                    }
+
+                }
+            }
+        }
+        else if (n < 0){
+            for (int i = 0; i > n; i--){
+                int buffer = array[0]; // запомним первый элемент массива
+                for (int j = 0; j < array.length - 1; j++){
+                    array[j] = array[j + 1];
+                    if (j == array.length - 2){
+                        array[array.length - 1] = buffer;
+                    }
+                }
+            }
+        }
+    }
+
     static void printArray (int[][] array){
         for (int i = 0; i < array.length; i++){
             for (int j = 0; j < array[i].length; j++){
