@@ -5,18 +5,10 @@ import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) {
-        // ...
-        /**
-         *1. Написать программу, которая загадывает случайное число от 0 до 9,
-         * и пользователю дается 3 попытки угадать это число.
-         * При каждой попытке компьютер должен сообщить больше ли указанное
-         * пользователем число чем загаданное, или меньше.
-         * После победы или проигрыша выводится запрос – «Повторить игру еще раз?
-         * 1 – да / 0 – нет»(1 – повторить, 0 – нет).
-         */
+
         sayHello();
         while (true){
-            playTheGame(4);
+            playTheGame(3);
             System.out.println("Повторить игру ещё раз? (1 – повторить, 0 – нет)");
             Scanner scanner = new Scanner(System.in);
             int userAnswer = getUserAnswer(0, 1);
