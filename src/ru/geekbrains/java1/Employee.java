@@ -1,14 +1,28 @@
 package ru.geekbrains.java1;
 
 public class Employee {
-    // поля
-    // ФИО, должность, email, телефон, зарплата, возраст;
 
-    // конструктор
-    // Конструктор класса должен заполнять эти поля при создании объекта;
+    private String fio;
+    private String position;
+    private String email;
+    private String phone;
+    private int salary;
+    private int age;
 
-    // геттеры и сеттеры
+    Employee (String fio, String position, String email, String phone, int salary, int age){
+        this.fio = fio;
+        this.position = position;
+        this.email = email;
+        this.phone = phone;
+        this.salary = salary;
+        this.age = age;
+    }
 
-    // методы
-    // Внутри класса «Сотрудник» написать метод, который выводит информацию об объекте в консоль;
+    public int getAge(){
+        return age;
+    }
+
+    public void printInfo(){
+        System.out.println(fio + ", " + position + ", " +  email + ", " +  phone + ", " +  salary + ", " +  age);
+    }
 }
