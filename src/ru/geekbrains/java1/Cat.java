@@ -2,12 +2,23 @@ package ru.geekbrains.java1;
 
 public class Cat extends Animal{
 
-    static final float runLengthMax = 200;
-    static final float swimLengthMax = 0; // кот не умеет плавать
-    static final float jumpHeightMax = 2;
+    private final float runLengthMax;
+    private final float swimLengthMax;
+    private final float jumpHeightMax;
 
     Cat(String name){
         super(name);
+        this.runLengthMax = 200;
+        this.swimLengthMax = 0; // кот не умеет плавать
+        this.jumpHeightMax = 2;
+    }
+
+    Cat (String name, float runLengthMax, float swimLengthMax, float jumpHeightMax){
+        super(name);
+        this.runLengthMax = runLengthMax;
+        this.swimLengthMax = swimLengthMax;
+        this.jumpHeightMax = jumpHeightMax;
+
     }
 
     @Override

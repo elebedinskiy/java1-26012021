@@ -2,12 +2,23 @@ package ru.geekbrains.java1;
 
 public class Dog extends Animal{
 
-    static final float runLengthMax = 500;
-    static final float swimLengthMax = 10;
-    static final float jumpHeightMax = 0.5f;
+    private final float runLengthMax;
+    private final float swimLengthMax;
+    private final float jumpHeightMax;
 
     Dog(String name){
         super(name);
+        this.runLengthMax = 500;
+        this.swimLengthMax = 10;
+        this.jumpHeightMax = 0.5f;
+    }
+
+    Dog (String name, float runLengthMax, float swimLengthMax, float jumpHeightMax){
+        super(name);
+        this.runLengthMax = runLengthMax;
+        this.swimLengthMax = swimLengthMax;
+        this.jumpHeightMax = jumpHeightMax;
+
     }
 
     @Override
