@@ -2,7 +2,7 @@ package ru.geekbrains.java1;
 
 abstract public class Animal {
 
-    protected String name;
+    protected final String name;
     protected float runLength;
     protected float swimLength;
     protected float jumpHeight;
